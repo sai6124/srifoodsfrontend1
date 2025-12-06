@@ -1,0 +1,109 @@
+
+
+.veg-container {
+  padding: 20px;
+  width: 100%;
+}
+
+
+.veg-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+
+.veg-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; 
+  align-items: flex-start;
+}
+
+
+.veg-item {
+  width: 240px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+
+.veg-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+.veg-details {
+  margin-top: 10px;
+}
+
+.veg-name {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.veg-desc {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.veg-price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.add-btn {
+  padding: 6px 12px;
+  background: green;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.pagination {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #aaa;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.pagination .active-page {
+  background: green;
+  color: white;
+  border-color: green;
+}
+
+
+.nav-btn {
+  background: #333;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.nav-btn:disabled {
+  background: #999;
+  cursor: not-allowed;
+}

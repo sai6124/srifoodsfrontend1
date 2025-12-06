@@ -1,0 +1,213 @@
+/* ---------------------------------------------------
+   CART PAGE CONTAINER (FIXED CENTER)
+--------------------------------------------------- */
+.cart-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;          /* ⭐ FIX: perfectly center the cart */
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.1);
+  min-height: 100vh;       /* ⭐ Covers entire visible page */
+}
+
+.cart-title {
+  font-size: 36px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1e3a8a;
+}
+
+/* ---------------------------------------------------
+   EMPTY CART MESSAGE
+--------------------------------------------------- */
+.empty-msg {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 40px;
+  color: #555;
+}
+
+/* ---------------------------------------------------
+   CART ITEM LIST
+--------------------------------------------------- */
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fafafa;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  gap: 15px;
+}
+
+.cart-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cart-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* PRODUCT NAME */
+.cart-details h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+}
+
+.qty-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qty-box button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 8px;
+  background: #1e3a8a;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.qty-box button:hover {
+  background: #162c6b;
+}
+
+.remove-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.remove-btn:hover {
+  background: #cc0000;
+}
+
+/* ---------------------------------------------------
+   DISCOUNT BUTTONS
+--------------------------------------------------- */
+.discount-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.discount-buttons button {
+  padding: 10px 18px;
+  background: #ff9800;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.discount-buttons button:hover {
+  background: #e68900;
+}
+
+/* ---------------------------------------------------
+   COUPON BOX
+--------------------------------------------------- */
+.coupon-box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.coupon-box input {
+  padding: 10px;
+  width: 220px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+.coupon-box button {
+  padding: 10px 15px;
+  background: #1e3a8a;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.coupon-box button:hover {
+  background: #162c6b;
+}
+
+/* ---------------------------------------------------
+   BILLING DETAILS BOX
+--------------------------------------------------- */
+.bill-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.bill-box h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+.bill-box p {
+  font-size: 18px;
+  color: #333;
+  margin: 8px 0;
+}
+
+.bill-box hr {
+  margin: 15px 0;
+}
+
+/* ---------------------------------------------------
+   BUTTONS
+--------------------------------------------------- */
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  background: #28a745;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 18px;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #1e7e34;
+}

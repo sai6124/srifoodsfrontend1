@@ -1,0 +1,102 @@
+/* ========== WRAPPER ========== */
+.orders-wrapper {
+  width: 100%;
+  padding: 30px 5%;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.orders-title {
+  text-align: center;
+  font-size: 32px;
+  color: #d12a5c;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+/* ========== ORDER BLOCK ========== */
+.order-section {
+  background: white;
+  padding: 25px;
+  margin-bottom: 40px;
+  border-radius: 14px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.10);
+}
+
+/* HEADER: ID + BILL INFO */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.order-summary {
+  text-align: right;
+}
+
+.net-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: green;
+}
+
+/* ========== ITEMS TITLE ========== */
+.items-title {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ========== GRID ========== */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* ========== INDIVIDUAL ITEM CARD ========== */
+.item-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  transition: 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.item-img {
+  width: 100%;
+  height: 170px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* TEXT */
+.item-info {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.item-info h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.item-info p {
+  color: #444;
+  margin-top: 4px;
+}
+
+.order-divider {
+  margin-top: 25px;
+  border: none;
+  height: 2px;
+  background: #eee;
+}

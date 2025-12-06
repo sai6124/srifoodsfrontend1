@@ -1,0 +1,49 @@
+.home-container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ⭐ FIX: centers all items */
+}
+
+/* MAIN HOME TITLE */
+.home-title {
+  font-size: 38px;
+  font-weight: 900;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+/* SUBTITLE */
+.home-subtitle {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* SECTIONS */
+.home-section {
+  margin: 30px 0;
+  padding: 10px;
+}
+
+/* SECTION HEADINGS */
+.home-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+/* LISTS */
+.home-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.home-section li {
+  font-size: 20px;
+  margin: 8px 0;
+  color: #444;
+}

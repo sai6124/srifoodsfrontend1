@@ -1,0 +1,63 @@
+/* ⭐ FULL PAGE BELOW NAV + BANNER (NO DOUBLE MARGIN) */
+.register-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 170px); /* navbar + banner */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f2f3f5;
+}
+
+/* ⭐ FORM BOX */
+.register-container {
+  width: 380px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color:green;
+  font-weight: bold;
+}
+
+.register-form input,
+.register-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background:green;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+.login-link {
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-link a {
+  color: #ff2e77;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

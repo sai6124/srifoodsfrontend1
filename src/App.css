@@ -1,0 +1,123 @@
+/* -----------------------------------------------------
+   NAVBAR
+------------------------------------------------------ */
+.navbar {
+  height: 90px;
+  background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+  background-size: cover;
+  background-position: center;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* LOGO SECTION */
+.logo-area {
+  display: flex;
+  align-items: center;
+  height: 90px;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 15px;
+}
+
+/* MENU LINKS */
+.menu-area {
+  display: flex;
+  gap: 60px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffea00;
+  transform: scale(1.08);
+}
+
+/* CART TEXT */
+.cart-area {
+  font-size: 20px;
+}
+
+/* -----------------------------------------------------
+   SCROLLING BANNER (PINK)
+------------------------------------------------------ */
+.scroll-banner {
+  width: 100%;
+  background: #ff69b4;
+  padding: 15px 0;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  position: fixed;
+  top: 90px;
+  left: 0;
+  z-index: 900;
+}
+
+.scroll-text {
+  font-size: 40px;
+  font-weight: 800;
+  color: yellow;
+  white-space: nowrap;
+  display: inline-block;
+  transform: translateX(100%);
+  animation: scrollFull 12s linear infinite;
+}
+
+@keyframes scrollFull {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* -----------------------------------------------------
+   MAIN CONTENT WRAPPER (VERY IMPORTANT!)
+------------------------------------------------------ */
+/* ALL PAGE CONTENT BELOW NAV + BANNER */
+.page-content {
+  padding-top: 170px;  /* final perfect number */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* ALL PAGE CONTENT BELOW NAV + BANNER */
+/* ALL PAGE CONTENT BELOW NAV + BANNER */
+.page-content {
+  padding-top: 170px;  /* final perfect number */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* ⭐ ANY PAGE WRAPPER SHOULD FOLLOW THIS CLASS */
+.center-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;    /* center horizontally */
+}
