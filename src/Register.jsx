@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import apiurl from "../api";   // ⭐ import your axios instance
+import axios from "axios";  // ✅ REQUIRED
 import Swal from "sweetalert2";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,8 +20,11 @@ function Register() {
       return alert("Please enter a valid address!");
 
     try {
-      // ⭐ CLEAN & CORRECT API CALL
-      await axios.post("https://srifoodsbackend.vercel.app/api/v1/products/register", data);
+      // ⭐ CLEAN & CORRECT API CALL (NO SYNTAX ERROR)
+      await axios.post(
+        "https://srifoodsbackend.vercel.app/api/v1/products/register",
+        data
+      );
 
       Swal.fire({
         icon: "success",
@@ -32,10 +35,7 @@ function Register() {
       });
 
       reset();
-
-      setTimeout(() => {
-        navigate("/login");
-      }, 2000);
+      setTimeout(() => navigate("/login"), 2000);
 
     } catch (err) {
       Swal.fire({
