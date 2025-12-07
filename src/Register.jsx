@@ -21,7 +21,7 @@ function Register() {
 
     try {
       // ⭐ CLEAN & CORRECT API CALL
-      await apiurl.post("/register", data);
+      await axios.post("https://srifoodsbackend.vercel.app/api/v1/products/register", data);
 
       Swal.fire({
         icon: "success",
