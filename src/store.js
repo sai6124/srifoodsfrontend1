@@ -2,10 +2,10 @@ import { configureStore, createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios";
 
 /* ============================================
-        AXIOS INSTANCE WITH TOKEN (CORRECT)
+        AXIOS INSTANCE FOR PRODUCTION
 ============================================ */
 const api = axios.create({
-  baseURL: "http://localhost:3000/api/v1/products",
+  baseURL: "https://srifoodsbackend.vercel.app/api/v1/products", // ✅ FIXED
 });
 
 // Attach Token as Bearer <token>
@@ -22,7 +22,7 @@ export const fetchVegProducts = createAsyncThunk(
   "veg/fetchVegProducts",
   async () => {
     const res = await api.get("/getVeg");
-    return res.data.data || []; // backend sends {status, data}
+    return res.data.data || [];
   }
 );
 
@@ -36,10 +36,13 @@ export const fetchNonvegProducts = createAsyncThunk(
 );
 
 /* ========================= PLACE ORDER ========================= */
-export const placeOrder = createAsyncThunk("order/placeOrder", async (orderData) => {
-  const res = await api.post("/placeOrder", orderData);
-  return res.data;
-});
+export const placeOrder = createAsyncThunk(
+  "order/placeOrder",
+  async (orderData) => {
+    const res = await api.post("/placeOrder", orderData);
+    return res.data;
+  }
+);
 
 /* ========================= GET ORDERS ========================= */
 export const fetchOrders = createAsyncThunk("orders/fetchOrders", async () => {
@@ -53,10 +56,10 @@ export const LoginUser = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const res = await axios.post(
-        "https://srifoodsbackend.vercel.app/api/v1/products/login", data
+        "https://srifoodsbackend.vercel.app/api/v1/products/login", // ✅ FIXED
+        data
       );
 
-      // Save token
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
       }
@@ -127,7 +130,6 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       const item = action.payload;
       const exist = state.items.find((i) => i._id === item._id);
-
       if (exist) exist.quantity++;
       else state.items.push({ ...item, quantity: 1 });
     },
@@ -157,7 +159,6 @@ const couponSlice = createSlice({
   reducers: {
     applyCoupon: (state, action) => {
       const entered = action.payload.toUpperCase();
-
       if (coupons[entered]) {
         state.code = entered;
         state.discount = coupons[entered];
@@ -218,4 +219,3 @@ export const { addToCart, increment, decrement, removeItem, clearCart } =
 export const { applyCoupon, clearCoupon } = couponSlice.actions;
 
 export default store;
-
