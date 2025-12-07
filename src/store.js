@@ -53,8 +53,7 @@ export const LoginUser = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/products/login",
-        data
+        "https://srifoodsbackend.vercel.app/api/v1/products/login", data
       );
 
       // Save token

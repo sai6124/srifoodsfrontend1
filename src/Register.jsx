@@ -1,12 +1,11 @@
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import apiurl from "../api";   // ⭐ import your axios instance
 import Swal from "sweetalert2";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
   const navigate = useNavigate();
-
   const { register, handleSubmit, reset } = useForm();
 
   const submitLogic = async (data) => {
@@ -21,7 +20,8 @@ function Register() {
       return alert("Please enter a valid address!");
 
     try {
-      await axios.post("http://localhost:3000/api/v1/products/register", data);
+      // ⭐ CLEAN & CORRECT API CALL
+      await apiurl.post("/register", data);
 
       Swal.fire({
         icon: "success",
@@ -33,7 +33,6 @@ function Register() {
 
       reset();
 
-      // ⭐ Navigate to Login page after success
       setTimeout(() => {
         navigate("/login");
       }, 2000);

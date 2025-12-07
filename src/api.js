@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiurl = axios.create({
-  baseURL: "srifoodsbackend.vercel.app",
+  baseURL: "https://srifoodsbackend.vercel.app/api/v1/products",
 });
 
 // Attach token on every request
