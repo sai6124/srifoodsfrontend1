@@ -137,10 +137,22 @@ const cartSlice = createSlice({
       const item = state.items.find((i) => i._id === action.payload);
       if (item) item.quantity++;
     },
-    decrement: (state, action) => {
-      const item = state.items.find((i) => i._id === action.payload);
-      if (item && item.quantity > 1) item.quantity--;
-    },
+    ```js
+decrement: (state, action) => {
+  const item = state.items.find((i) => i._id === action.payload);
+
+  if (!item) return;
+
+  if (item.quantity > 1) {
+    item.quantity--;
+  } else {
+    state.items = state.items.filter(
+      (i) => i._id !== action.payload
+    );
+  }
+},
+```
+
     removeItem: (state, action) => {
       state.items = state.items.filter((i) => i._id !== action.payload);
     },
@@ -200,6 +212,7 @@ const loginSlice = createSlice({
       });
   },
 });
+
 
 /* ========================= STORE ========================= */
 const store = configureStore({
