@@ -139,7 +139,9 @@ const cartSlice = createSlice({
     },
     ```js
 decrement: (state, action) => {
-  const item = state.items.find((i) => i._id === action.payload);
+  const item = state.items.find(
+    (i) => i._id === action.payload
+  );
 
   if (!item) return;
 
@@ -151,16 +153,8 @@ decrement: (state, action) => {
     );
   }
 },
-```
 
-    removeItem: (state, action) => {
-      state.items = state.items.filter((i) => i._id !== action.payload);
-    },
-    clearCart: (state) => {
-      state.items = [];
-    },
-  },
-});
+
 
 /* ========================= COUPON SLICE ========================= */
 const coupons = { SAVE10: 10, SAVE20: 20, SAVE30: 30 };
