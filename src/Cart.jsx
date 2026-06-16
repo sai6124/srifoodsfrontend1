@@ -70,39 +70,52 @@ function Cart() {
 
   // ⭐ UPDATED CHECKOUT WITH SWEETALERT2 ⭐
   const handleCheckout = async () => {
-    const orderData = {
-      items: cart,
-      totalAmount,
-      discountPercent,
-      discountAmount: appliedDiscount,
-      gst,
-      netAmount,
-    };
+  if (cart.length === 0) {
+    Swal.fire({
+      title: "Cart Empty",
+      text: "Please add items before checkout",
+      icon: "warning",
+    });
+    return;
+  }
 
-    try {
-      await dispatch(placeOrder(orderData));
-
-      Swal.fire({
-        title: "Success!",
-        text: "Order Placed Successfully!",
-        icon: "success",
-        confirmButtonText: "Go to Orders",
-        confirmButtonColor: "#3085d6",
-      }).then(() => {
-        dispatch(clearCart());
-        navigate("/orders");
-      });
-
-    } catch (err) {
-      Swal.fire({
-        title: "Error!",
-        text: "Order failed, please try again.",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-    }
+  const orderData = {
+    items: cart,
+    totalAmount,
+    discountPercent,
+    discountAmount: appliedDiscount,
+    gst,
+    netAmount,
   };
 
+  try {
+    await dispatch(placeOrder(orderData)).unwrap();
+
+    await Swal.fire({
+      title: "Success!",
+      text: "Order Placed Successfully!",
+      icon: "success",
+      confirmButtonText: "Go to Orders",
+      confirmButtonColor: "#3085d6",
+    });
+
+    dispatch(clearCart());
+    dispatch(clearCoupon());
+
+    setInputCode("");
+    setButtonDiscountPercent(0);
+    setUPIQR("");
+    setCouponError("");
+
+    navigate("/orders");
+  } catch (err) {
+    Swal.fire({
+      title: "Error!",
+      text: err?.message || "Order failed, please try again.",
+      icon: "error",
+    });
+  }
+};
   return (
     <main className="cart-container">
       <h1 className="cart-title">Your Cart</h1>
